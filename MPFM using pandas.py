@@ -148,13 +148,3 @@ writer.save()
 
 # checking
 
-
-
-
-
-
-
-
-
-
-
