@@ -16,13 +16,16 @@ n = 300
 m = 1100
 N = 5
 #============================== IMPORTING ================================
-MPFM_data = pd.read_csv('ZB-10.log',sep='\t')
+file= '/Users/mohammedalbatati/AnacondaProjects/OilSERV/Reading csv using pandas/MPFM-python/ZB-10second.log'
+MPFM_data = pd.read_csv(file,sep='\t')
 #MPFM_data = pd.read_csv('ZB-10second.log',sep='\t')
 
 #========================== REMOVING BAD COLUMNS & HEADERS ===============
 #MPFM_data.drop('Unnamed: 31', axis = 1, inplace = True)
 MPFM_data.drop(MPFM_data[[18,19,20,21,22,23,24,25,26,27,28,29,30,31]],axis=1, inplace = True)
 MPFM_data.drop('Unnamed: 32', axis = 1, inplace = True)
+
+
 
 #========================= CONVERTING TIME AND DATE ======================
 MPFM_data['comb_datetime'] = pd.to_datetime(MPFM_data['Date']+' '+MPFM_data['Clock'])
